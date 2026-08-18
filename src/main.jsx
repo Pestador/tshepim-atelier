@@ -26,7 +26,7 @@ const Logo = ({ compact = false }) => <button className="logo" onClick={() => sc
 function Header({ cartCount, onBag, onSearch }) {
   const [menu, setMenu] = useState(false);
   return <>
-    <div className="announcement">Complimentary delivery on orders over R 2,500</div>
+    <a className="announcement" href="https://pestador.github.io/tshepim-atelier-fundraiser/">You’re viewing the concept store — support the real launch <Icon name="arrow" size={15}/></a>
     <header className="header">
       <Logo />
       <nav className={menu ? 'nav open' : 'nav'} aria-label="Main navigation">
@@ -149,7 +149,7 @@ function App() {
     <section className="edit-section reveal" id="edit"><div className="edit-copy"><p className="category">The edit</p><h2>The Soft<br/>Power Edit</h2><p>Ease, structure and a little drama—pieces that hold their own from first light to last reservation.</p><button className="text-link" onClick={()=>{setFilter('Tops');document.querySelector('#shop').scrollIntoView({behavior:'smooth'})}}>Shop the edit</button></div><img src={asset('editorial.png')} alt="The Soft Power Edit"/></section>
     <section className="becoming reveal" id="about"><div><p className="category">Our point of view</p><h2>Made for your becoming.</h2><p>TshepiM Atelier is a fictional South African fashion house for this interactive concept—built around confidence, considered form, and fewer, better pieces.</p><div className="proof"><span>Small-batch curation</span><span>South Africa delivery</span><span>14-day returns</span></div></div><img src={asset('oxblood-still.png')} alt="Oxblood sculptural bag still life"/></section>
     <section className="journal section reveal"><div><p className="category">Journal</p><h2>Notes from the atelier</h2><button className="text-link" onClick={()=>alert('The journal is a sample area in this fictional demo.')}>Read the journal</button></div>{[['08 Aug','On quiet confidence and everyday luxury'],['24 Jul','The power of proportion'],['10 Jul','In the studio: a study in form']].map(([date,title])=><article key={title}><small>{date}</small><h3>{title}</h3><button className="text-link" onClick={()=>alert('Sample journal story.')}>Read more</button></article>)}</section>
-    <footer><Logo/><p>Fictional boutique demo, thoughtfully made for TshepiM.</p><div><a href="#shop">Shop</a><a href="#about">About</a><button onClick={()=>alert('hello@tshepim-demo.co.za (fictional)')}>Contact</button></div><small>© 2026 TshepiM Atelier. Demo experience — no real purchases.</small></footer>
+    <footer><Logo/><p>Fictional boutique demo, thoughtfully made for TshepiM.</p><div><a href="#shop">Shop</a><a href="#about">About</a><a href="https://pestador.github.io/tshepim-atelier-fundraiser/">Support the Real Launch</a><button onClick={()=>alert('hello@tshepim-demo.co.za (fictional)')}>Contact</button></div><small>© 2026 TshepiM Atelier. Demo experience — no real purchases.</small></footer>
     <ProductModal product={selected} onClose={()=>setSelected(null)} onAdd={add}/><CartDrawer open={bagOpen} cart={cart} onClose={()=>setBagOpen(false)} changeQty={changeQty} remove={remove} onCheckout={()=>{setBagOpen(false);setView('checkout');scrollTo(0,0)}}/>
     {toast && <div className="toast"><Icon name="check"/>{toast}</div>}
   </div>;
